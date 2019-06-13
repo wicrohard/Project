@@ -1,0 +1,37 @@
+/**modifyInformation.wxss**/
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.page__desc {
+  width: 100%;
+  margin: 15rpx;
+}
+
+.radio-group {
+    border-bottom: 1rpx solid #ddd;
+    background-color: white;
+}
+.radio {
+    display: block;
+    border-top: 1px solid #ddd;
+    padding: 10rpx;
+}
+
+.inputUserinfo {
+  height: 100%;
+  width: 100%;
+  margin: 20rpx;
+}
+
+#submitButton {
+  border-radius: 10px;
+  width: 95%;
+  position:fixed;
+  bottom: 10rpx;
+  margin-left: -350rpx;
+}

@@ -1,0 +1,32 @@
+<!--modifyInformation.wxml-->
+<view class="container">
+
+  <!--性别-->
+  <view class="inputUserinfo" >
+    <view class="page__desc">
+      <text>性别</text>
+    </view>
+    <radio-group class="radio-group" bindchange="sexChange">
+      <radio class="radio" wx:for-items="{{sexItems}}" wx:key="name" value="{{item.value}}" checked="{{item.checked}}">
+        <text>{{item.name}}</text>
+      </radio>
+    </radio-group>
+  </view>
+
+  <!--年级-->
+  <view class="inputUserinfo">
+    <view class="page__desc">
+      <text>年级</text>
+    </view>
+    <radio-group class="radio-group" bindchange="gradeChange">
+      <radio class="radio" wx:for-items="{{gradeItems}}" wx:key="name" value="{{item.value}}" checked="{{item.checked}}">
+        <text>{{item.name}}</text>
+      </radio>
+    </radio-group>
+  </view>
+  <view class="uploader-text">
+    <button id="submitButton" type="primary" bindtap="submitInformation">
+        <text>确定</text>
+        </button>
+  </view>
+</view>

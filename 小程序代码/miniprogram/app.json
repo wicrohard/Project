@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/mine/mine",
+    "pages/about/about",
+    "pages/newQuestionaire/newQuestionaire",
+    "pages/myQuestion/myQuestionList",
+    "pages/questionaireList/questionairList",
+    "pages/modifyUserInfo/modifyInformation",
+    "pages/statistics/statistics",
+    "pages/newLost/newLost",
+    "pages/lostList/lostList",
+    "pages/answerQuestionaire/answerQuestionaire"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "挣闲钱",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+    "tabBar": {
+    "color": "#7a7e83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/questionaireList/questionairList",
+        "text": "问卷",
+        "iconPath": "images/tabBar/questionaireList.png",
+        "selectedIconPath": "images/tabBar/questionaireList-active.png"
+      },
+      {
+        "pagePath": "pages/lostList/lostList",
+        "text": "寻物启事",
+        "iconPath": "images/tabBar/lostList.png",
+        "selectedIconPath": "images/tabBar/lostList-active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/tabBar/mine.png",
+        "selectedIconPath": "images/tabBar/mine-active.png"
+      }
+    ]
+  }
+}
