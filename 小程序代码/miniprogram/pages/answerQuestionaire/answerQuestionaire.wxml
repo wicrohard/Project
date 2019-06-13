@@ -1,0 +1,62 @@
+<!--pages/answerQuestionaire/answerQuestionaire.wxml-->
+<page>
+ <form bindsubmit="submitQuestionaire">
+      <block wx:for="{{questionaire.questions}}" wx:key="quesOrder">
+          <view class="subject">
+            <view class="question">{{item.quesOrder}}.{{item.quesContent}}</view>
+            <block wx:if="{{item.questionTypeid==1}}">
+              <view class="tint">单选题</view>
+              <view class="optionwrap">
+                <radio-group name="question{{item.quesOrder}}">
+                  <block wx:for="{{item.optionsForQuesid}}"  wx:key="optionContent">
+                    <label class="option">
+                      <view>
+                        <radio value="{{item.optionOrder}}"></radio>
+                      </view>
+                      <view class="cell">
+                        {{item.optionContent}}
+                      </view>
+                    </label>
+                  </block>
+                </radio-group>
+              </view>
+            </block>
+            <block wx:if="{{item.questionTypeid==2}}">
+              <view class="tint">多选题</view>
+              <view class="optionwrap">
+                <checkbox-group name="question{{item.quesOrder}}">
+                  <block wx:for="{{item.optionsForQuesid}}" wx:key="optionContent">
+                    <label class="option" bindtap="">
+                      <view>
+                        <checkbox value="{{item.optionOrder}}"></checkbox>
+                      </view>
+                      <view class="cell">
+                        {{item.optionContent}}
+                      </view>
+                    </label>
+                  </block>
+                </checkbox-group>
+              </view>
+            </block>
+          </view>
+      </block>
+      <block>
+        <view class="next">
+          <button type="primary" class="nextques" form-type="submit">提交</button>
+        </view>
+      </block>
+  </form>
+
+  <block wx:if="{{currentpage==2}}">
+    <view id="thankswrap">
+    <icon type="success" size="100"></icon>
+    <view class="thanks">
+      提交成功
+    </view>
+    <view class="thankscontent">
+      感谢您！
+    </view>
+    <button bindtap="navback" type="primary" id="yes">确定</button>
+  </view>
+  </block>
+</page>
