@@ -1,0 +1,33 @@
+<!--miniprogram/pages/myQuestion/myQuestionList.wxml-->
+<page>
+  <block wx:if="{{questionaires.length==0}}">
+  <view class="nothing">
+  您还没有发布过问卷哦
+  </view>
+  <view class="nothing">
+  去新建问卷吧！
+  </view>
+  </block>
+  <block wx:if="{{questionaires.length!=0}}">
+    <block wx:for="{{questionaires}}">
+      <view wx:if="{{item.isLiving}}" class="cardwrap" bindtap='showdetail' data-id="{{item._id}}" id="{{item._id}}">
+        <view class="">
+          <view class="hint">进行中</view>
+        </view>
+        <view class="title">《{{item.title}}》</view>
+        <button  class="fill-button"type="primary" size="mini" catchtap="stopAnswer" data-_id="{{item._id}}"> 结束</button>
+        <view class="desc">{{item.description}}</view>
+        <view class="desc">填写人数：{{item.total}}</view>
+      </view>
+      <view wx:if="{{item.isLiving!=true}}" class="cardwrap" bindtap='showdetail' data-id="{{item._id}}" id="{{item._id}}">
+        <view class="">
+          <view class="hint" style="background: red">已结束</view>
+        </view>
+        <view class="title">《{{item.title}}》</view>
+        <button  class="fill-button"type="primary" size="mini" catchtap="clearAnswer" data-_id="{{item._id}}" style="background: red"> 删除</button>
+        <view class="desc">{{item.description}}</view>
+        <view class="desc">填写人数：{{item.total}}</view>
+      </view>
+    </block>
+  </block>
+</page>
