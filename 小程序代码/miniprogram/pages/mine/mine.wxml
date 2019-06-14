@@ -1,0 +1,42 @@
+<!--miniprogram/pages/mine/mine.wxml-->
+<page>
+  <block wx:if="{{userInfo}}">
+    <view id="mineBg">
+    </view>
+    <view bindtap="bindViewTap" class="userinfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <view class="userinfo-text">
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        <text class="userinfo-point">积分：{{userInfo.credit}}</text>
+        <text class="userinfo-gender">性别：{{userInfo.gender}}</text>
+        <text class="userinfo-grade">年级：{{userInfo.grade}}</text>
+      </view>
+    </view>
+    <view class="buttonList">
+      <view class="operation" bindtap="newQuestionaire">
+        <image class="imageview"   src="../../images/mine/newQuestionaire.png"></image>
+        新建问卷 
+      </view>
+      <view class="operation" bindtap="myQuestionaire">
+        <image class="imageview"   src="../../images/mine/myQuestionaire.png"></image>
+        我的问卷 
+      </view>
+      <view class="operation" bindtap="modifyUserInfomation">
+        <image class="imageview"   src="../../images/mine/modifyInformation.png"></image>
+        修改信息 
+      </view>
+      <view class="operation" bindtap="newLost">
+        <image class="imageview"   src="../../images/mine/myQuestionaire.png"></image>
+        发布寻物启事 
+      </view>
+    </view>
+    <view class="buttonList">
+      <navigator url="../about/about">
+        <view class="operation">
+          <image class="imageview"   src="../../images/mine/settings.png"></image>
+          关于
+        </view>
+      </navigator>
+    </view>
+  </block>
+</page>

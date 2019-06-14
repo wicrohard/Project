@@ -1,0 +1,28 @@
+<!--miniprogram/pages/newLost/newLost.wxml-->
+<page>
+  <block>
+    <form bindsubmit="lostComplete">
+      <view class="hint">
+        物品名称
+      </view>
+      <input name="lostTitle" placeholder="丢失物品的名称" auto-focus="true" />
+      <view class="hint">
+        丢失时间
+      </view>
+      <input name="lostTime" placeholder="物品丢失的可能时间" />
+      <view class="hint">
+        丢失地点
+      </view>
+      <input name="lostLocation" placeholder="物品丢失的可能地点" />
+      <view class="hint">
+        联系方式
+      </view>
+      <input name="contactDetails" placeholder="电话、QQ..." />
+      <view class="hint">
+        物品描述
+      </view>
+      <input name="lostDescription" placeholder="丢失物品的具体特征" auto-focus="true" />
+      <button type="primary" form-type="submit">提交</button>
+    </form>
+  </block>
+</page>

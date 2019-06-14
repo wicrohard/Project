@@ -1,0 +1,24 @@
+<!--miniprogram/pages/questionaireList/questionairList.wxml-->
+
+<page>
+    <view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          时间限制：{{array[index]}}
+        </view>
+      </picker>
+    </view>
+    <block wx:for="{{lost}}" wx:if="{{item.startTime>stopTime}}" wx:key="_id">
+      <view class="cardwrap" id="{{item._id}}" >
+        <view class="">
+          <view class="hint">《{{item.title}}》</view>
+        </view>
+        <view class="desc">发布人：{{item.userName}}</view>
+        <view class="desc">遗失地点：{{item.location}}</view>
+        <view class="desc">遗失时间：{{item.time}}</view>
+        <view class="desc">具体描述：{{item.description}}</view>
+        <view class="desc">联系方式：{{item.contactDetails}}</view>
+        <view class="desc">发布时间：{{item.releaseTime}}</view>
+      </view>
+    </block>
+</page>
