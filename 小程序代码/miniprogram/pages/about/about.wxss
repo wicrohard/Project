@@ -1,1 +1,71 @@
 /* miniprogram/pages/about/about.wxss */
+page {
+  background-color: #f8f8f8;
+}
+
+.buttonList {
+  margin-top: 30rpx;
+  background-color: #fff;
+  line-height: 2.51;
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
+  color: #353535;
+  position: relative;
+}
+
+.operation:first-child::before {
+  display: none;
+}
+
+.operation::before {
+  content: " ";
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1rpx solid #d9d9d9;
+  color: #d9d9d9;
+  position: absolute;
+}
+
+.operation {
+  position: relative;
+  height: 100rpx;
+  vertical-align: bottom;
+  margin-left: 20rpx;
+}
+
+image{
+    width: 450rpx;
+    height: 377rpx;
+    margin-left: 150rpx;
+}
+
+.leftText{
+  margin-left: 0;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.rightText{
+  margin-right: 20rpx;
+  vertical-align: middle;
+  text-align: right;
+  float:right;
+  color: rgb(151, 150, 150)
+}
+
+.bottomBlock{
+  text-align:center;
+  position: relative;
+}
+
+.copyRight{
+  color: rgb(151, 150, 150);
+  font-size: 24rpx;
+  position: absolute;
+  bottom: 10rpx;
+  padding: 0rpx;
+  margin-left: 80rpx;
+}
