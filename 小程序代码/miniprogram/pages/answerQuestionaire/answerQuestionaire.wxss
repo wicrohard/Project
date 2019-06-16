@@ -97,14 +97,13 @@ margin-top: 10px;
 }
 .option::before{
   content: " ";
-  left: 0;
   top: 0;
+  left: 30rpx;
   right: 0;
   height: 1px;
   border-top: 1rpx solid #d9d9d9;
   color: #d9d9d9;
   position: absolute;
-  left: 30rpx;
 }
 
 radio{
@@ -126,17 +125,23 @@ radio{
 }
 
 #thankswrap{
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 150rpx;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 150rpx;
 }
 .thanks{
-    font-size: 20pt;
-    margin-top: 30rpx;
+  font-size: 20pt;
+  margin-top: 30rpx;
 }
 .thankscontent{
-    margin: 30rpx 30rpx;
+  margin: 30rpx 30rpx;
 }
 #yes{
-    margin: 80rpx 40rpx;
+  margin: 80rpx 40rpx;
+}
+/*感谢语*/
+.peroration{
+  font-size: 15pt;
+  margin: 20rpx 20rpx;    
+  color: rgb(13, 141, 245);
 }
