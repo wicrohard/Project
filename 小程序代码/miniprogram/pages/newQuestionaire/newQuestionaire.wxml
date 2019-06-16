@@ -1,0 +1,98 @@
+<!--miniprogram/pages/newQuestionaire/newQuestionaire.wxml-->
+<page>
+
+  <block wx:if="{{current=='survey'}}">
+    <form bindsubmit="surveyComplete">
+      <view class="hint">
+        问卷名称
+      </view>
+      <input name="surveyTitle" placeholder="关于...的问卷" auto-focus="true" />
+      <view class="hint">
+        问卷描述
+      </view>
+      <input name="surveyDescription" placeholder="问卷的目的、意义等" />
+      <view class="hint">
+        问卷结语
+      </view>
+      <input name="surveyPeroration" placeholder="感谢语" />
+      <view class="hint">
+        报酬
+      </view>
+      <input name="surveyBonus" placeholder="数字" auto-focus="true" />
+      <view class="hint">
+        问卷面向人群
+      </view>
+      <view class="ranges">
+        <checkbox-group bindchange="checkboxChangeGrade">
+          <view class="hint">年级：</view>
+          <view class="hint">
+            <label class="checkbox" wx:for="{{requments.grade}}" wx:key="key">
+              <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+          </view>
+        </checkbox-group>
+        <checkbox-group bindchange="checkboxChangeGender">
+          <view class="hint">性别：</view>
+          <view class="hint">
+            <label class="checkbox" wx:for="{{requments.gender}}" wx:key="key">
+              <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+          </view>
+        </checkbox-group>
+      </view>
+      <button type="primary" form-type="submit">下一步</button>
+    </form>
+  </block>
+
+  <block wx:if="{{current=='questionList'}}">
+    <view class="hint">
+      题目列表
+    </view>
+    <block wx:for="{{queses}}">
+      <view class="ques">
+        {{item.quesOrder}}.{{item.quesContent}}
+        <block wx:for="{{item.optionsForQuesid}}" wx:for-item="subitem">
+          <view class="option">
+            {{subitem.optionOrder}}.{{subitem.optionContent}}
+          </view>
+        </block>
+      </view>
+    </block>
+    <button type="primary" bindtap="newques" size="mini" plain="true">添加新题</button>
+    <button type="primary" bindtap="completeAll">提交问卷</button>
+   <!-- <button type="default" bindtap="tosurvey">转到介绍</button> --> 
+  </block>
+  
+  <block wx:if="{{current=='option'}}">
+    <form bindsubmit="quesComplete">
+      <view class="hint">
+        题目类型
+      </view>
+      <picker value="{{questionTypeid}}" range="{{quesTypeArray}}" bindchange="bindTypeChange">{{quesTypeArray[questionTypeid]}}</picker>
+      <view class="hint">
+        题目内容
+      </view>
+      <input name="quesContent" placeholder="您...." auto-focus="true" />
+
+<block wx:if="{{questypeid!=2}}">
+      <view style="text-align:center;margin:0 auto;color:#b2b2b2;font-size:9pt;">选项列表</view>
+      <view class="divisionwrap">
+        <view class="division"></view>
+      </view>
+      <view id="optionwrap">
+        <block wx:for="{{array}}">
+          <view class="hint">
+            选项
+          </view>
+          <input name="option{{index}}" placeholder="选项内容" />
+        </block>
+        <button id="addoption" type="primary" plain="true" size="mini" bindtap="addOption">添加选项</button>
+      </view>
+</block>
+
+      <button type="primary" form-type="submit">提交问题</button>
+      <button type="warn" bindtap="toques">返回题目列表</button>
+    </form>
+  </block>
+  
+</page>
