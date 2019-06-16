@@ -1,0 +1,5 @@
+/* pages/login/login.wxss */
+.contain{
+  margin-top: 650rpx;
+  padding: 140rpx;
+}
