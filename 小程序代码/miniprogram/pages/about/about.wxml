@@ -1,2 +1,25 @@
 <!--miniprogram/pages/about/about.wxml-->
-<text>miniprogram/pages/about/about.wxml</text>
+<page>
+  <block>
+    <image src="../../images/about/me.png"></image>
+    <view class="buttonList">
+      <view class="operation">
+        <view class="leftText"><left>开发者</left></view>
+        <view class="rightText"><right>16级数媒L姓小队</right></view>
+      </view>
+      <view class="operation">
+        <view class="leftText"><left>联系方式</left></view>
+        <view class="rightText"><right>暂无</right></view>
+      </view>
+      <view class="operation">
+        <view class="leftText"><left>版本</left></view>
+        <view class="rightText"><right>1.0.3</right></view>
+      </view>
+    </view>
+  </block>
+  <block class="bottomBlock">
+    <view class="copyRight">
+      Copyright © 2019-2020 LTeam.All Rights Reserved.
+    </view>
+  </block>
+</page>
