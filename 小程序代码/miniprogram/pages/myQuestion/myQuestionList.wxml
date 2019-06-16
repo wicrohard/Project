@@ -16,7 +16,9 @@
         </view>
         <view class="title">《{{item.title}}》</view>
         <button  class="fill-button"type="primary" size="mini" catchtap="stopAnswer" data-_id="{{item._id}}"> 结束</button>
-        <view class="desc">{{item.description}}</view>
+        <view class="desc">详细描述：{{item.description}}</view>
+        <view class="desc">报酬：{{item.bonus}}</view>
+        <view class="desc">发布时间：{{item.releaseTime}}</view>
         <view class="desc">填写人数：{{item.total}}</view>
       </view>
       <view wx:if="{{item.isLiving!=true}}" class="cardwrap" bindtap='showdetail' data-id="{{item._id}}" id="{{item._id}}">
@@ -25,7 +27,9 @@
         </view>
         <view class="title">《{{item.title}}》</view>
         <button  class="fill-button"type="primary" size="mini" catchtap="clearAnswer" data-_id="{{item._id}}" style="background: red"> 删除</button>
-        <view class="desc">{{item.description}}</view>
+        <view class="desc">详细描述：{{item.description}}</view>
+        <view class="desc">报酬：{{item.bonus}}</view>
+        <view class="desc">发布时间：{{item.releaseTime}}</view>
         <view class="desc">填写人数：{{item.total}}</view>
       </view>
     </block>

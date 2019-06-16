@@ -1,5 +1,6 @@
 <!--pages/answerQuestionaire/answerQuestionaire.wxml-->
 <page>
+ <view class="peroration">{{questionaire.peroration}}</view>
  <form bindsubmit="submitQuestionaire">
       <block wx:for="{{questionaire.questions}}" wx:key="quesOrder">
           <view class="subject">
