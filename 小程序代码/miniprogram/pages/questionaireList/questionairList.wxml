@@ -3,13 +3,14 @@
     <block wx:for="{{questionaires}}" wx:key="questionaire">
       <view class="questionaireList"  >
         <view class="">
-          <view class="hint">进行中</view>
+          <view class="hint">《{{item.title}}》</view>
         </view>
-        <view class="title">《{{item.title}}》
+        <view class="desc">发布人：{{item.userName}}
           <button  class="fill-button"type="primary" size="mini" bindtap="gotoAnswer" data-_id="{{item._id}}"> 填写</button>
         </view>
-        <view class="desc">{{item.description}}</view>
+        <view class="desc">详细描述：{{item.description}}</view>
         <view class="desc">报酬：{{item.bonus}}</view>
+        <view class="desc">发布时间：{{item.releaseTime}}</view>
       </view>
     </block>
 </page>
