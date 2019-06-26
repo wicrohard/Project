@@ -48,10 +48,10 @@
     <view class="hint">
       题目列表
     </view>
-    <block wx:for="{{queses}}">
+    <block wx:for="{{queses}}" wx:key="queses">
       <view class="ques">
         {{item.quesOrder}}.{{item.quesContent}}
-        <block wx:for="{{item.optionsForQuesid}}" wx:for-item="subitem">
+        <block wx:for="{{item.optionsForQuesid}}" wx:key="option" wx:for-item="subitem">
           <view class="option">
             {{subitem.optionOrder}}.{{subitem.optionContent}}
           </view>
@@ -60,7 +60,6 @@
     </block>
     <button type="primary" bindtap="newques" size="mini" plain="true">添加新题</button>
     <button type="primary" bindtap="completeAll">提交问卷</button>
-   <!-- <button type="default" bindtap="tosurvey">转到介绍</button> --> 
   </block>
   
   <block wx:if="{{current=='option'}}">
