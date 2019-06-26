@@ -1,5 +1,12 @@
 /* pages/login/login.wxss */
 .contain{
-  margin-top: 650rpx;
-  padding: 140rpx;
+  margin-top: 350rpx;
+  padding: 40rpx;
+}
+
+image{
+    margin-top: 50rpx; 
+    width: 550rpx;
+    height: 477rpx;
+    margin-left: 100rpx;
 }
