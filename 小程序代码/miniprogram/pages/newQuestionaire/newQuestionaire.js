@@ -1,4 +1,5 @@
 // miniprogram/pages/newQuestionaire/newQuestionaire.js
+var util = require('../../utils/util.js')
 Page({
 
   /**
@@ -19,6 +20,8 @@ Page({
     surveyBonus: null,
     queses: [],
     user: null,
+    time: null,       //当前时间
+    timetab: null,    //当前时间距1970年1月1日之间的毫秒数
     requments: {
       gender : [
         { name: '男', value: '男', checked: false},
@@ -54,6 +57,30 @@ Page({
     console.log(this.data.grade)
   },
   surveyComplete: function (e) {
+    if (!(e.detail.value.surveyTitle && e.detail.value.surveyDescription && e.detail.value.surveyPeroration && e.detail.value.surveyBonus))
+    {
+      wx.showToast({
+        image: '../../images/icon/icon-bang.png',
+        title: '输入不能为空',
+      })
+      return
+    }
+    if (!parseInt(e.detail.value.surveyBonus))
+    {
+      wx.showToast({
+        image: '../../images/icon/icon-bang.png',
+        title: '报酬请输入数字',
+      })
+      return
+    }
+    if (JSON.stringify(this.data.gender) == "{}" || JSON.stringify(this.data.grade) == "{}")
+    {
+      wx.showToast({
+        image: '../../images/icon/icon-bang.png',
+        title: '请选择调查对象',
+      })
+      return
+    }
     this.setData({
       current: "questionList",
       surveyTitle: e.detail.value.surveyTitle,
@@ -84,6 +111,33 @@ Page({
     })
   },
   quesComplete: function (e) {
+    if (!e.detail.value.quesContent) {
+      wx.showToast({
+        image: '../../images/icon/icon-bang.png',
+        title: '请输入题目内容',
+      })
+      return
+    }
+    if (this.data.array.length < 2) {
+      wx.showToast({
+        image: '../../images/icon/icon-bang.png',
+        title: '至少两个选项',
+        
+      })
+      return
+    }
+    for(var i = 0; i< this.data.array.length; ++i)
+    {
+      var optionkey = "option" + i;
+      if (!e.detail.value[optionkey])
+      {
+        wx.showToast({
+          image: '../../images/icon/icon-bang.png',
+          title: '请输入选项内容',
+        })
+        return
+      }
+    }
     this.setData({
       quesorder: this.data.quesorder + 1,
     })
@@ -117,6 +171,14 @@ Page({
     var gender = this.data.gender
     var grade = this.data.grade
     const db = wx.cloud.database()
+    if(this.data.queses.length == 0)
+    {
+      wx.showToast({
+        image: '../../images/icon/icon-bang.png',
+        title: '请添加新题',
+      })
+      return
+    }
     db.collection('questionaires').add({
       data: {
         title: this.data.surveyTitle,
@@ -125,6 +187,8 @@ Page({
         questions: this.data.queses,
         total: 0,
         isLiving: true,
+        releaseTime: this.data.time,
+        userName: getApp().globalData.userInfo.nickName,
         requment: {
           gender,
           grade
@@ -160,7 +224,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //获得当前时间
+    var time = util.formatTime(new Date())
+    var start_date = new Date(time.replace(/-/g, "/"));
+    //获得当前时间距1970年1月1日之间的毫秒数
+    var timetab = start_date.getTime()
+    this.setData({
+      timetab: timetab,
+      time: time,
+    })
   },
 
   /**
