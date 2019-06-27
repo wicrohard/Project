@@ -92,6 +92,12 @@ Page({
     //   complete: function (res) { },
     // })
     // 调用云函数
+    wx.showToast({
+      title: '登录中',
+      icon: 'loading',
+      duration: 1000,
+      mask: true
+    })
     wx.cloud.callFunction({
       name: 'login',
       data: {},
@@ -106,8 +112,14 @@ Page({
         }).get({
           // if exists
           success: res => {
-            if (res.data.length != 0) {
+            if(res.data.length != 0 ){
               app.globalData.userInfo = res.data[0]
+              console.log("Get User Information Succeed")
+              console.log("app.globalData.userInfo: ")
+              console.log(app.globalData.userInfo)
+              wx.reLaunch({
+                url: '../mine/mine'
+              })
             }
             else {
               db.collection('usersInfo').add({
@@ -115,23 +127,26 @@ Page({
                 success: res => {
                   console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
                   console.log("add : " + res._id)
+                  wx.reLaunch({
+                    url: '../mine/mine'
+                  })
                 },
                 fail: err => {
                   console.error('[数据库] [新增记录] 失败：', err)
                 }
               })
             }
-            console.log("Get User Information Succeed")
+
           },
           // else
           fail: err => {
             console.log("Get User Information Failed")
-
+            
           }
         })
-        wx.reLaunch({
-          url: '../mine/mine'
-        })
+        // wx.reLaunch({
+        //   url: '../mine/mine'
+        // })
         // wx.switchTab({
         //   url: '../mine/mine',
         //   success: function (res) { },
