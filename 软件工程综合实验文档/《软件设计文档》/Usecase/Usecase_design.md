@@ -1,25 +1,15 @@
 # 用例设计
 
 
-
-
-
-
-
-
 | 版本 | 日期 | 描述 | 作者 |
 | - | - | - | - |
 | v1.3 | 2019.5.8 | 用例设计 | LYM |
 
 
 
-
-
-
-
 ## 用例图
 
-![](../../Requirement_specification/Requirement_image/Usecase_diagram.png)
+![](../../《软件需求规格说明书》/Requirement_image/Usecase_diagram.png)
 
 ## 顺序图
 
