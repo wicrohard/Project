@@ -5,63 +5,63 @@
 
 ## 登录
 
-![](Design/UI/UI_image/login.png)
+![](../《软件设计文档》/UI/UI_image/login.png)
 
 打开小程序后，点击微信授权登录即可完成登录。
 
-![](Design/UI/UI_image/mine.png)
+![](../《软件设计文档》/UI/UI_image/mine.png)
 
 在“我的”页面，有四个功能入口，分别是“新建问卷”、“我的问卷”、“修改信息”和“发布寻物启事”，以及一个可以查看版本信息的“关于”页面。小程序是基于用户性别和年级进行问卷推送的，因此，在登录成功后，用户需要先修改个人信息。若没有修改，性别和年级会默认为“未知”。
 
 ## 新建问卷
 点击“我的”页面中的“新建问卷”，可以进入“新建问卷”页面。
 
-![](Design/UI/UI_image/newQuestionaire1.png)
+![](../《软件设计文档》/UI/UI_image/newQuestionaire1.png)
 
 填写问卷的基本信息后，点击下一步，进入添加问题页面。注意：问卷的基本信息不能为空，报酬必须是一个正整数，否则在点击下一步时会跳出错误提示。
 
-![](Design/UI/UI_image/newQuestionaire2.png)
+![](../《软件设计文档》/UI/UI_image/newQuestionaire2.png)
 
 点击“添加问题”，可以编辑问题。注意：问题个数至少为1个，若问题个数小于1个时，点击“提交问卷”会跳出错误提示。
 
-![](Design/UI/UI_image/newQuestionaire3.png)
+![](../《软件设计文档》/UI/UI_image/newQuestionaire3.png)
 
 在编辑问题时，用户可以选择题目类型为“单选题”或“多选题”，问题描述不能为空，添加的选项个数必须大于等于2个，否则在提交问题的时候会跳出错误提示。
 
 ## 填写问卷
 点击“问卷”页面，可以查看能够填写的问卷列表，问卷列表基于用户的性别和年级生成。
 
-![](Design/UI/UI_image/questionaireList.png)
+![](../《软件设计文档》/UI/UI_image/questionaireList.png)
 
 点击“填写”可以进入该问卷，进行填写。
 
-![](Design/UI/UI_image/answerQuestionaire.png)
+![](../《软件设计文档》/UI/UI_image/answerQuestionaire.png)
 
 填写完成后，点击“提交”完成填写。注意：若问题没有回答完，会跳出错误提示。
 
 ## 问卷统计
 在“我的”页面点击“我的问卷”，可以查看到用户发布的问卷。
 
-![](Design/UI/UI_image/myQuestion1.png)
+![](../《软件设计文档》/UI/UI_image/myQuestion1.png)
 
 对于正在进行的问卷，用户可以点击“结束”按钮来结束问卷。对于已经结束的问卷，用户可以点击“删除”来删除问卷。
 
 点击任意一个问卷，可以查看具体的问卷统计信息。
 
-![](Design/UI/UI_image/statistics1.png)
+![](../《软件设计文档》/UI/UI_image/statistics1.png)
 
-![](Design/UI/UI_image/statistics2.png)
+![](../《软件设计文档》/UI/UI_image/statistics2.png)
 
 进入问卷统计后，默认为无图标，点击上方切换图表样式，可以切换为条形图。
 
 ## 发布寻物启事
 在“我的”页面点击“发布寻物启事”，可以进入“发布寻物启事”页面。
 
-![](Design/UI/UI_image/newLost.png)
+![](../《软件设计文档》/UI/UI_image/newLost.png)
 
 填写寻物启事的详细信息后，点击“提交”发布寻物启事。注意：寻物启事的详细信息不能为空，如果某项为空将会跳出错误提示。
 
 ## 查看寻物启事
 点击“寻物启事”页面，用户可以查看所有人发布的寻物启事。系统默认为用户展示最近三天内发布的寻物启事，用户也可以点击上方的选择器，将时间限制更改为7天内、一月内或全部。
 
-![](Design/UI/UI_image/lostList.png)
+![](../《软件设计文档》/UI/UI_image/lostList.png)
