@@ -13,7 +13,7 @@
       </view>
       <view class="operation">
         <view class="leftText"><left>版本</left></view>
-        <view class="rightText"><right>1.0.3</right></view>
+        <view class="rightText"><right>1.0.5</right></view>
       </view>
     </view>
   </block>
