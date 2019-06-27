@@ -1,7 +1,7 @@
 # Project
 This is our project for pratical training this term
 
-* [项目文档](https://github.com/wicrohard/Dashboard/tree/master/documents)  
+* [项目文档](https://github.com/wicrohard/Dashboard/tree/master)  
 * [《安装部署说明》](https://github.com/wicrohard/Dashboard/blob/master/documents/Production_specification/Deployment_instructions.md)
 * [《用户手册》](https://github.com/wicrohard/Dashboard/blob/master/documents/User_manual.md)
 * [《软件需求规格说明书》（SRS）](https://github.com/wicrohard/Dashboard/blob/master/documents/Requirement_specification/Requirement_specification.md)
