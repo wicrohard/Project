@@ -1,0 +1,20 @@
+# 软件工程综合实验文档
+
+[项目代码仓库](https://github.com/wicrohard/Project)
+
+1. [安装部署说明](安装部署说明/Deployment_instructions.md)
+2. [用户手册](用户手册/User_manual.md)
+3. [《软件需求规格说明书》(SRS)](《软件需求规格说明书》/Requirement_specification.md)
+	- 3.1 [Usecase Diagram and UML Activity Diagram（用例图，业务过程/多泳道图）](《软件需求规格说明书》/Usecase_diagram.md)
+	- 3.2 [Use Cases（用例+活动图）](《软件需求规格说明书》/Use_cases.md)
+	- 3.3 [Domain Models（领域模型）](《软件需求规格说明书》/Domain_models.md)
+	- 3.4 [State Models（状态模型）](《软件需求规格说明书》/State_models.md)
+	- 3.5 [System Sequence Diagrams（功能模型）](《软件需求规格说明书》/System_sequence_diagrams.md)
+	- 3.6 [Supplementary Requirements（补充需求）](《软件需求规格说明书》/Supplementary_requirements.md)
+4. [《软件设计文档》(SDS）](《软件设计文档》/Design.md)
+	- 4.1 [UI design（界面设计）](《软件设计文档》/UI/UI_design.md)
+	- 4.2 [Database design（数据库设计）](https://blog.csdn.net/Lyn_B/article/details/93626034)
+	- 4.3 [Interface API design（接口 API 设计）](《软件设计文档》/API/API_design.md)
+	- 4.4 [Architecture design（架构设计）](《软件设计文档》/Architecture/Architecture_design.md)
+	- 4.5 [Usecase design（用例设计）](《软件设计文档》/Usecase/Usecase_design.md)
+5. [小组分工与贡献率说明](小组分工与贡献率说明/小组分工与贡献率说明.md)
